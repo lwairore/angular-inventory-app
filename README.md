@@ -17,3 +17,10 @@ Here is a working live demo: [https://lwairore.github.io/angular-inventory-app/]
 ## Team
 
 [Karangu Lucas](https://github.com/lwairore)
+
+## Further reading
+The following reading material will provide you with more information about Clarity components, reactive forms, and validations:
+
+- Clarity Design documentation: [https://clarity.design/](https://clarity.design/).
+- Angular documentation on reactive forms: [https://angular.io/guide/reactive-forms](https://angular.io/guide/reactive-forms).
+- Angular documentation on form validations: [https://angular.io/guide/form-validation](https://angular.io/guide/form-validation).
