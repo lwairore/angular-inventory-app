@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { ProductServicesproductServices, IProduct } from '../product.service';
+import { ProductService, IProduct } from '../product.service';
 
 @Component({
   selector: 'in-products',
@@ -16,7 +16,7 @@ export class ProductsComponent implements OnInit {
 
 
   constructor(
-    private productServices: ProductServicesproductServices,
+    private productServices: ProductService,
   ) { }
 
   ngOnInit(): void {
@@ -40,5 +40,11 @@ export class ProductsComponent implements OnInit {
     // We need to implement this method removeProduct in our ProductsService
     this.productServices.removeProduct(this.productToBeDeleted);
   }
+
+  onEdit(product) {
+    // this.product
+  }
+
+  addProduct() {}
 
 }
