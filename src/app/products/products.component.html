@@ -1,6 +1,8 @@
 <h1>Products</h1>
 <button class="btn btn-outline btn-sm" (click)="addProduct()">Add Product</button>
 <in-delete-product-modal
+  *ngIf="delete"
+  [product]="productToBeDeleted"
     (cancel)="handleCancel()"
     (confirm)="confirmDelete()"
 >
