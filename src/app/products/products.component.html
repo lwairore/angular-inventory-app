@@ -1,5 +1,10 @@
 <h1>Products</h1>
 <button class="btn btn-outline btn-sm" (click)="addProduct()">Add Product</button>
+<in-delete-product-modal
+    (cancel)="handleCancel()"
+    (confirm)="confirmDelete()"
+>
+</in-delete-product-modal>
 <clr-datagrid>
     <clr-dg-column [clrDgField]="'name'">Name</clr-dg-column>
     <clr-dg-column>Expiration Date</clr-dg-column>
