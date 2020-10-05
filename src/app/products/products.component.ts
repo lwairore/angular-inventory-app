@@ -10,19 +10,21 @@ import { ProductService, IProduct } from '../product.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProductsComponent implements OnInit {
-  products$: Observable<IProduct[]> = this.productServices.products$;
+  products$: Observable<IProduct[]> = this.productService.products$;
   delete = false;
   productToBeDeleted;
+  productOpen;
+  selectedProduct: IProduct;
 
 
   constructor(
-    private productServices: ProductService,
+    private productService: ProductService,
   ) { }
 
   ngOnInit(): void {
   }
 
-  trackById(index, item){
+  trackById(index, item) {
     return item.id;
   }
 
@@ -38,13 +40,31 @@ export class ProductsComponent implements OnInit {
   confirmDelete() {
     this.handleCancel();
     // We need to implement this method removeProduct in our ProductsService
-    this.productServices.removeProduct(this.productToBeDeleted);
+    this.productService.removeProduct(this.productToBeDeleted);
+  }
+
+
+  addProduct() {
+    this.productOpen = true;
+    this.selectedProduct = undefined;
   }
 
   onEdit(product) {
-    // this.product
+    this.productOpen = true;
+    this.selectedProduct = product;
   }
 
-  addProduct() {}
+  handleFinish(event) {
+    if (event && event.product) {
+      if (this.selectedProduct) {
+        // Edit Flow
+        this.productService.editProduct(this.selectedProduct.id, event.product);
+      } else {
+        // Save New
+        this.productService.addProduct(event.product);
+      }
+    };
+    this.productOpen = false;
+  }
 
 }
