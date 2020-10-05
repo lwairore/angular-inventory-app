@@ -31,7 +31,7 @@
                 </clr-input-container>
                 <!-- Toggle Switch for active -->
                 <div class="toggle-switch">
-                    <input type="checkbox" id="active" formControlName="active">
+                    <input type="checkbox" id="active" formControlName="active" />
                     <label for="active">Active</label>
                 </div>
                 <!-- Textarea for Product Description -->
@@ -51,7 +51,9 @@
         </clr-wizard-page>
         <clr-wizard-page>
             <ng-template clrPageTitle>Expiration Info</ng-template>
-            ...
+            <clr-input-container formGroupName="expiration">
+                <input type="date" clrInput clrDate formControlName="expirationDate">
+            </clr-input-container>
         </clr-wizard-page>
     </clr-wizard>
 </form>
