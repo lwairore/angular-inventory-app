@@ -1,16 +1,25 @@
 <form [formGroup]="productForm">
-    <clr-wizard #productWizard [clrWizardOpen]="true"  
-     clrWizardSize="lg" (clrWizardOnCancel)="handleClose()">
+    <clr-wizard #productWizard [clrWizardOpen]="true" clrWizardSize="lg" (clrWizardOnCancel)="handleClose()">
         <clr-wizard-title>{{product? 'Edit Product' : 'Add New Product'}}</clr-wizard-title>
-        <clr-wizard-button [type]="'cancel'" 
-        (click)="handleClose()">Cancel</clr-wizard-button>
+        <clr-wizard-button [type]="'cancel'" (click)="handleClose()">Cancel</clr-wizard-button>
         <clr-wizard-button [type]="'previous'">Back</clr-wizard-button>
         <clr-wizard-button [type]="'next'">Next</clr-wizard-button>
-        <clr-wizard-button [type]="'finish'" 
-        (click)="handleClose()">Finish</clr-wizard-button>
+        <clr-wizard-button [type]="'finish'" (click)="handleClose()">Finish</clr-wizard-button>
         <clr-wizard-page>
             <ng-template clrPageTitle>Select Device Type</ng-template>
-            ...
+            <div class="clr-row devices">
+                <div class="clr-col-md-6" *ngFor="let item of deviceTypes">
+                    <a href="javascript:void(0)" class="card clickable" (click)="selectDevice(item)" [ngClass]="{'active': 
+                     item.icon === deviceType}">
+                        <div class="card-block">
+                            <p class="card-text">
+                                {{item.name}}
+                                <clr-icon [attr.shape]="item.icon"></clr-icon>
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
         </clr-wizard-page>
         <clr-wizard-page>
             <ng-template clrPageTitle>Basic Info</ng-template>
@@ -19,6 +28,6 @@
         <clr-wizard-page>
             <ng-template clrPageTitle>Expiration Info</ng-template>
             ...
-    </clr-wizard-page>
+        </clr-wizard-page>
     </clr-wizard>
 </form>
