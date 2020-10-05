@@ -76,6 +76,10 @@ export class ProductComponent implements OnInit {
     }
   }
 
+  get isBasicInvalid(): boolean {
+    return this.productForm.get('basic').invalid;
+  }
+
   addFeature() {
     this.basicFeatures.push(this.fb.control(''));
   }
