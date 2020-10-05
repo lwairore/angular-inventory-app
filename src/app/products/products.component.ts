@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { ProductService, IProduct } from '../product.service';
+import { ProductServicesproductServices, IProduct } from '../product.service';
 
 @Component({
   selector: 'in-products',
@@ -10,10 +10,13 @@ import { ProductService, IProduct } from '../product.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProductsComponent implements OnInit {
-  products$: Observable<IProduct[]> = this.productService.products$;
+  products$: Observable<IProduct[]> = this.productServices.products$;
+  delete = false;
+  productToBeDeleted;
+
 
   constructor(
-    private productService: ProductService,
+    private productServices: ProductServicesproductServices,
   ) { }
 
   ngOnInit(): void {
@@ -21,6 +24,21 @@ export class ProductsComponent implements OnInit {
 
   trackById(index, item){
     return item.id;
+  }
+
+  onDelete(product) {
+    this.delete = true;
+    this.productToBeDeleted = product;
+  }
+
+  handleCancel() {
+    this.delete = false;
+  }
+
+  confirmDelete() {
+    this.handleCancel();
+    // We need to implement this method removeProduct in our ProductsService
+    this.productServices.removeProduct(this.productToBeDeleted);
   }
 
 }
