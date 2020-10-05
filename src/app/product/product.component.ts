@@ -1,6 +1,7 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input, Output, ViewChild, EventEmitter } from '@angular/core';
+import { Component, OnInit, OnChanges, ChangeDetectionStrategy, Input, Output, ViewChild, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, FormArray, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
 import { ClrWizard } from '@clr/angular';
+import * as _ from 'lodash';
 
 function minDateValidation(date: Date): ValidatorFn {
   return (control: AbstractControl): { [key: string]: any } | null => {
@@ -16,7 +17,7 @@ function minDateValidation(date: Date): ValidatorFn {
   styleUrls: ['./product.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ProductComponent implements OnInit {
+export class ProductComponent implements OnInit, OnChanges {
   productForm: FormGroup;
   @Input() product;
   @Output() finish = new EventEmitter();
@@ -59,6 +60,22 @@ export class ProductComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if (this.product){
+      this.productForm.setValue({
+        basic: {
+          ..._.pick(this.product, ['name', 'description', 'active']),
+          features: this.product.features || ['']
+        },
+        expiration: {
+          ..._.pick(this.product, ['expirationDate'])
+        }
+      });
+      this.deviceType = this.product.type;
+    }
+  }
+
+  ngOnChanges() {
+    this.ngOnInit();
   }
 
   get basicFeatures(): FormArray {
