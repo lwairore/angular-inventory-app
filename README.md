@@ -1,27 +1,19 @@
-# InventoryApp
+# Angular Inventory App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
+This is an application for managing an inventory using one of the third-party component libraries that was created by VMware's team, known as the Clarity component. It follows the Clarity Design System, which has detailed UX/UI guidelines that need to be followed for using the components correctly. It also documents do's and don'ts for using each of the components. You can find the documentation at (https://clarity.design)[https://clarity.design].
 
-## Development server
+Angular Inventory App displays products and performing **Create**, **Read**, **Update**, and **Delete** (**CRUD**) operations.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Demo
 
-## Code scaffolding
+Here is a working live demo: ()[]
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Built with
 
-## Build
+- (Clarity's wizard component library)[https://clarity.design/] and used reactive forms - To create complex form via a step-by-step workflow so that we can add/edit products.
+- Built-in validations from Angular and custom validator.
+- (Angular)[]
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Team
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+(Karangu Lucas)[https://github.com/lwairore]
