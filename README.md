@@ -22,7 +22,7 @@ This is how the Angular Inventory App looks:
 
 # Team
 
-[Karangu Lucas](https://github.com/lwairore)
+[Karangu Lucas Wairore](https://github.com/lwairore)
 
 ## Further reading
 The following reading material will provide you with more information about Clarity components, reactive forms, and validations:
