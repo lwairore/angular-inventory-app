@@ -4,12 +4,15 @@ This is an application for managing an inventory using one of the third-party co
 
 Angular Inventory App displays products and performing **Create**, **Read**, **Update**, and **Delete** (**CRUD**) operations.
 
-This is how the Angular Inventory App looks:
-![This image shows how Angular Inventory App looks](src/assets/demos/inventory-app-homepage.png)
-
 ## Demo
 
 Here is a working live demo: [https://lwairore.github.io/angular-inventory-app/](https://lwairore.github.io/angular-inventory-app/)
+
+This is how the Angular Inventory App looks:
+![This image shows how Angular Inventory App looks](src/assets/demos/inventory-app-homepage.png)
+
+### Add new product
+![This image shows how Add new Product section looks like](src/assets/demos/add-new-product.png)
 
 ## Built with
 
