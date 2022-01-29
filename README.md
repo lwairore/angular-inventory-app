@@ -24,7 +24,7 @@ This is how the Angular Inventory App looks:
 
 [Karangu Lucas Wairore](https://github.com/lwairore)
 
-## Further reading
+# Further reading
 The following reading material will provide you with more information about Clarity components, reactive forms, and validations:
 
 - Clarity Design documentation: [https://clarity.design/](https://clarity.design/).
