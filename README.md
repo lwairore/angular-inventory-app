@@ -20,7 +20,7 @@ This is how the Angular Inventory App looks:
 - Built-in validations from Angular and custom validator.
 - [Angular](http://angular.io/)
 
-## Team
+# Team
 
 [Karangu Lucas](https://github.com/lwairore)
 
