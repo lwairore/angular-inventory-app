@@ -14,7 +14,7 @@ This is how the Angular Inventory App looks:
 ### Add new product
 ![This image shows how Add new Product section looks like](src/assets/demos/add-new-product.png)
 
-## Built with
+# Built with
 
 - [Clarity's wizard component library](https://clarity.design/) and used reactive forms - To create complex form via a step-by-step workflow so that we can add/edit products.
 - Built-in validations from Angular and custom validator.
